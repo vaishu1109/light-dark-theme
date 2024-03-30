@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dark light theme</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        padding: 10px;
+      }
+      .container {
+        display: flex;
+      }
+      .logo {
+        padding: 50px;
+        text-align: center;
+      }
+      .description {
+        padding-left: 50px;
+      }
+      
+      .theme-icon {
+        width: 40px;
+        padding: 10px;
+       
+      }
+      .active {
+        border: 1px solid black;
+        border-radius: 5px;
+      }
+      .dark{
+        background-color: #252525;
+        color: white;
+      }
+      .light{
+        background-color: white;
+        color: black;
+      }
+    </style>
+  </head>
+  <body id="body">
+    <div class="theme">
+      <img src="./img/moon.png" alt="dark" class="theme-icon" id="btn-dark" style=" background-color: white;" onclick="dark()"/>
+      <img src="./img/sun.png" alt="light" class="theme-icon active" id="btn-light" onclick="light()"/>
+    </div>
+
+    <h2>Learn JavaScript Tutorial..</h2>
+    <div class="container">
+      <div class="logo">
+        <img src="./img/java_logo.png" alt="logo" width="300px"/>
+      </div>
+
+      <div class="description">
+        Our JavaScript Tutorial is designed for beginners and professionals
+        both. JavaScript is used to create client-side dynamic pages. JavaScript
+        is an object-based scripting language which is lightweight and
+        cross-platform. JavaScript is not a compiled language, but it is a
+        translated language. The JavaScript Translator (embedded in the browser)
+        is responsible for translating the JavaScript code for the web browser.
+        What is JavaScript JavaScript (js) is a light-weight object-oriented
+        programming language which is used by several websites for scripting the
+        webpages. It is an interpreted, full-fledged programming language that
+        enables dynamic interactivity on websites when applied to an HTML
+        document. It was introduced in the year 1995 for adding programs to the
+        webpages in the Netscape Navigator browser. Since then, it has been
+        adopted by all other graphical web browsers. With JavaScript, users can
+        build modern web applications to interact directly without reloading the
+        page every time. The traditional website uses js to provide several
+        forms of interactivity and simplicity. Although, JavaScript has no
+        connectivity with Java programming language. The name was suggested and
+        provided in the times when Java was gaining popularity in the market. In
+        addition to web browsers, databases such as CouchDB and MongoDB uses
+        JavaScript as their scripting and query language.
+      </div>
+    </div>
+    <script>
+        function dark(){
+            const darkElement=document.getElementById("btn-dark");
+            darkElement.classList.add('active');
+            const lightElement=document.getElementById("btn-light");
+            lightElement.classList.remove('active');
+            const bodyElement=document.getElementById("body");
+            bodyElement.className="dark";
+        }
+        function light(){
+            const lightElement=document.getElementById("btn-light");
+            lightElement.classList.add('active');
+            const darkElement=document.getElementById("btn-dark");
+            darkElement.classList.remove('active');
+            const bodyElement=document.getElementById("body");
+            bodyElement.className="light";
+        }
+    </script>
+  </body>
+</html>
